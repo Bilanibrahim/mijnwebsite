@@ -2,18 +2,18 @@
 
 
 
-.contact-parent{
+.contact-alle{
     background:white;
     display:flex;
     margin:20px 0;
 }
 
-.contact-child{
+.contact-contact{
     flex:1;
   
 }
 
-.child1{
+.contact-foto{
     background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://cdn.pixabay.com/photo/2019/06/28/00/17/architecture-4303279_1280.jpg");
     background-size:cover;
     display:flex;
@@ -23,12 +23,12 @@
     padding:50px 0;
 }
 
-.child1 p{
+.contact-foto p{
     padding-left:20%;
     font-size:20px;
 }
  
-.child1 p span{
+.contact-foto p span{
     font-size:16px;
     color:#9df2fd;
 }
@@ -36,7 +36,7 @@
 a {
 		color:#9df2fd;
 }
-.child2{
+.contact-me{
     flex-direction:column;
     justify-content:space-around;
     align-items:center;
