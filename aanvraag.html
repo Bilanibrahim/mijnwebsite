@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <script type="text/javascript" src="js.js"></script>
+	<title>Formulier met divisie keuzemenu</title>
+	<style>
+		body {
+			background-color: #3CACF8;
+		}
+        form {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    
+        h2 {
+            text-align: center;
+            color: #3CACF8;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #3CACF8;
+        }
+    
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+    
+        input[type="submit"] {
+            background-color: #3CACF8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #2D8CCF;
+        }
+    
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+	<form action="https://formsubmit.co/0e4b8a3bf408f0b13c8837bedefdf1ad" method="POST">
+		<h2>Aanvraagformulier</h2>
+		<label for="divisie">Kies een divisie:</label>
+		<select id="divisie" name="divisie" Required="required" onchange="checkDivisie()">
+			<option value="uitkeren">Uitkeren</option>
+			<option value="K&S">K&S</option>
+			<option value="gegevensdiensten">Gegevensdiensten</option>
+			<option value="g-IV">G-IV</option>
+			<option value="ICT-IS">ICT-IS</option>
+			<option value="Handhaving">Handhaving</option>
+			<option value="Werkbedrijf">Werkbedrijf</option>
+			<option value="Fez">Fez</option>
+			<option value="anders">Anders</option>
+		</select>
+		<div id="andersDiv" class="hidden">
+			<label for="anders">Vul hier de naam van de divisie in:</label>
+			<input type="text" id="anders" name="anders">
+		</div>
+
+        
+		
+
+        
+	
+	<script>
+		function checkDivisie() {
+			var divisie = document.getElementById("divisie").value;
+			if (divisie === "anders") {
+				document.getElementById("andersDiv").classList.remove("hidden");
+			} else {
+				document.getElementById("andersDiv").classList.add("hidden");
+			}
+		}
+	</script>
+    <label for="dropdown">Kies een Skills:</label>
+<select id="dropdown" name="skills" Required="required">
+  <option value="option1">.NET</option>
+  <option value="option2">Java</option>
+  <option value="option3">Ai</option>
+  <option value="other">Anders</option>
+  
+</select>
+
+<div id="other-input" style="display:none;">
+  <label for="other-text">Vul hier de Skills in:</label>
+  <input type="text" id="other-text" name="other-text">
+  
+</div>
+<label id="GEWENSTE START DATUM">GEWENSTE START DATUM</label> <input type="date" name="start datum" value=""> 
+<p>
+<label id="GEWENSTE ENID DATUM">GEWNSTE ENID DATUM</label> <input type="date" name="eind datum" value="">
+</p>
+<p><label id="email-label" >Email Adress aanvrager:</label> <input type="email" name="email" spellcheck="false" id="email-field" onkeyup="validateEmail()"><br> <span id="email-error"></span></p>
+<p><label id="email-label" >Email Adress Kostenplaatsholder:</label> <input type="email" name="email kostenplaatshouder" spellcheck="false" id="email-field" onkeyup="validateEmail()"><br> <span id="email-error"></span> </p>
+<p><label>Kostenplaats:</label> <textarea name="message"></textarea></p>
+<p><label>Opmerkingen:</label><textarea name="message"></textarea></p>
+<p>
+<input type="submit" value="Verstuur"></p>
+</form> 
+<script>
+	const dropdown = document.getElementById("dropdown");
+const otherInput = document.getElementById("other-input");
+const otherSubmit = document.getElementById("other-submit");
+
+dropdown.addEventListener("change", function() {
+  if (dropdown.value === "other") {
+    otherInput.style.display = "block";
+  } else {
+    otherInput.style.display = "none";
+  }
+});
+
+otherSubmit.addEventListener("click", function() {
+  const otherText = document.getElementById("other-text").value;
+  // Doe iets met de ingevoerde tekst
+});
+
+</script>
+
+
+
+</body>
+</html>  
