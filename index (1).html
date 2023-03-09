@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWV</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+      <body>
+        <nav>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <label class="logo">UWV <img src="" alt="">
+           
+        </label>
+          <ul>
+          
+            <li><a href="#">Mijn account</a></li>
+          </ul>
+       
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+        <div class="nav">
+
+            
+        </div>
+    
+            <!-- content goes here -->
+            <div class="col-sm-8">
+<h2 >. <button class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">+ - Nieuwe aanvraag toevoegen</button></h2>
+
+
+<div class="alert alert-success alert-dismissable" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    Zoek op naam, divisie of functie ...
+</div>
+
+
+
+    <!-- Enter New Student Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+   
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary" style="align-content: center;">Nieuwe Aanvraag</h5>    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  
+
+                <div class="modal-body">
+                    
+                    <form action="{{ url_for('insert')}}" method="POST">
+                        <div class="form-group">
+                          <label>Naam</label>
+                          <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Vul naam in*">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Beschrijving Contact</label>
+                            <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Vul E-mail-adres in*">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Divisie</label>
+                            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vul divisie in*">
+                          </div>
+
+                          <div class="form-group">
+                            <label>Functie</label>
+                            <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vul functie in*">
+                          </div>
+
+                          <div class="form-group">
+                            <label>Kostenplaats</label>
+                            <input name="€" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vul kostenplaats">
+                          </div>
+
+                          <button type="submit" class="btn btn-primary mb-2">Save</button>
+                     
+                      </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- End of Enter New Student Modal -->
+
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Naam</th>
+            <th scope="col">Beschrijving Contact</th>
+            <th scope="col">Status</th>
+            <th scope="col">Divisie</th>
+            <th scope="col">Functie</th>
+            <th scope="col">Kostenplaats</th>
+            <th scope="col">Actie</th>
+        </tr>
+    </thead>
+
+    
+    <tbody>
+     
+        <tr>
+            <td>Anne Bloemenveld</td>
+            <td>soort contract </td>
+            <td>Open</td>
+            <td>UIT</td>
+            <td>Front-end developer</td>
+            <td>€</td>
+            <td>
+            <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+            <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+        </td>
+    </tr>
+
+    <tbody>
+   
+        <tr>
+            <td>Jelle Ploeg</td>
+            <td>soort contract </td>
+            <td>Geaccepteerd</td>
+            <td>SMZ</td>
+            <td>Back-end developer</td>
+            <td>€</td>
+            <td>
+            <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+            <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>Henk Ham</td>
+        <td>soort contract </td>
+        <td>Open</td>
+        <td>K&S</td>
+        <td>Front-end developer</td>
+        <td>€</td>
+        <td>
+            <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+            <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+        </td>
+    </tr>
+
+</tr>
+<tr>
+    <td>Liselotte de Bruijn</td>
+    <td>soort contract </td>
+    <td>Afgewezen   </td>
+    <td>UIT</td>
+    <td>Software developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+</tr>
+</tr>
+
+<tr>
+    <td>Tina Achterveld</td>
+    <td>soort contract </td>
+    <td>Geaccepteerd </td>
+    <td>K&S</td>
+    <td>Back-end developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+</tr>
+</tr>
+
+    <tr>
+    <td>Julia Meijer</td>
+    <td>Soort contract</td>
+    <td>Open</td>
+    <td>UIT</td>
+    <td>Software developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ??')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+
+    </tr>
+
+    <tr>
+    <td>Lucas van Zanten</td>
+    <td>Soort contract</td>
+    <td>Open</td>
+    <td>SMZ</td>
+    <td>Front-end developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+
+    </tr>
+
+    <tr>
+    <td>Dirk Pietersen</td>
+    <td>Soort contract</td>
+    <td>Afgewezen</td>
+    <td>K&S</td>
+    <td>Software developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ? ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+
+    </tr>
+
+    <tr>
+    <td>Linda Hoog</td>
+    <td>Soort contract</td>
+    <td>Geaccepteerd</td>
+    <td>UIT</td>
+    <td>Front-end developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+</tr>
+</tr>
+
+<tr>
+    <td>Cas Visser</td>
+    <td>Soort contract}</td>
+    <td>Geaccepteerd</td>
+    <td>UIT</td>
+    <td>Back-end developer</td>
+    <td>€</td>
+    <td>
+        <a href="/update/{{row.0}}" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
+        <a href="/delete/{{ row.0 }}" onclick="return confirm('Weet je het zeker dat je het wilt verwijderen ?')" class="btn btn-danger btn-sm">Delete</a>
+
+    </td>
+</tr>
+
+
+        <!-- Enter New Student Modal -->
+        <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+       
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary" style="align-content: center;">Werk gegevens bij</h5>    
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      
+    
+                    <div class="modal-body">
+                        
+                        <form action="{{ url_for('update')}}" method="POST">
+                            <input type="hidden" name="id" value="{{row.0}}">
+                            <div class="form-group">
+                              <label>Naam</label>
+                              <input value="Vul naam in" type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter Full Name">
+                            </div>
+    
+                            <div class="form-group">
+                                <label>Soort Contract</label>
+                                <input value="Beschrijving contract" type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email">
+                            </div>
+    
+
+                              <div class="form-group">
+                                <label>Divisie</label>
+                                <input value="Vul divisie in" name="Vul status in" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Functie</label>
+                                <input value="Vul functie in" name="Vul status in" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Kostenplaats</label>
+                                <input value="Vul kostenplaats in" name="Vul status in" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Phone Number">
+                              </div>
+    
+    
+                              <button type="submit" class="btn btn-success mb-2">Werk bij</button>
+                         
+                          </form>
+    
+    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+    
+    
+    </tbody>
+
+</table>
+            </div>
+            <!-- Content ends here-->
+
+
+            <div class="col-sm-2"></div>
+
+        </div>
+    </div>
+</div>
+</div>
+</nav>
+
+ <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+</html>

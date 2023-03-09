@@ -1,0 +1,55 @@
+.Alles {
+    text-align: center;
+    background-color: white;
+    font-family: Arial;
+}
+
+/* The navbar algemeen */
+.topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  /* Navbar */
+  .topnav a {
+    float: left;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* verander kleur*/
+  .topnav a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background: white;
+  }
+
+  H1 {
+    text-align: center;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    background-color: black;
+    font-size: 24px;
+    border-radius: 12px;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    color: white;
+}
+
+.rekenmachine{
+  text-align: center;
+}
